@@ -8,7 +8,11 @@
 </head>
 <body>
 왜 안되는거야!!!!!!!!!
+<<<<<<< HEAD
 된다된다 야야야야야야야호호호
+=======
+된다된다
+>>>>>>> branch 'master' of https://github.com/MINIMINI1/Cplusplus.git
 되라쫌
 </body>
 </html>
