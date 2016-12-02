@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="cpp.model.BoardVO" alias="BoardVO" />
+		<typeAlias type="cpp.model.ChattingVO" alias="ChattingVO" />
+		<typeAlias type="cpp.model.FriendVO" alias="FriendVO" />
+		<typeAlias type="cpp.model.GanttChartVO" alias="GanttChartVO" />
+		<typeAlias type="cpp.model.JobVO" alias="JobVO" />
+		<typeAlias type="cpp.model.KanbanVO" alias="KanbanVO" />
+		<typeAlias type="cpp.model.LoginVO" alias="LoginVO" />
+		<typeAlias type="cpp.model.MemberVO" alias="MemberVO" />
+		<typeAlias type="cpp.model.MessageVO" alias="MessageVO" />
+		<typeAlias type="cpp.model.ProjectMemberVO" alias="ProjectMemberVO" />
+		<typeAlias type="cpp.model.ProjectVO" alias="ProjectVO" />
+		<typeAlias type="cpp.model.ReplyVO" alias="ReplyVO" />
+	</typeAliases>
+</configuration>

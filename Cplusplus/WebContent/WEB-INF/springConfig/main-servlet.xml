@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!-- 다오 빈 생성 -->
+<context:component-scan base-package="cpp.dao" />
+
+<!-- 모델 빈 생성 -->
+<context:component-scan base-package="cpp.model" />
+
+<!-- 컨트롤러 빈 생성 -->
+<context:component-scan base-package="cpp.controller" />
+
+<!--JNDI 설정  -->
+<bean id='dataSource' class="org.springframework.jndi.JndiObjectFactoryBean">
+	<property name="jndiName" value="java:comp/env/jdbc/myora"></property>
+</bean>
+
+<!--Mybatis 설정  -->
+<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/>
+	<property name="configLocation" value="classpath:mybatis/config/config.xml"/><!--설정파일  -->
+	<property name="mapperLocations" value="classpath:mybatis/mapper/*"/><!--*로 전체 설정 가능  -->
+</bean>
+
+<!--SqlSession(연결객체) 빈 설정  -->
+<bean id="ss" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg ref="factoryBean"></constructor-arg>
+</bean>
+
+<!-- 파일 업로드 -->
+<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> -->
+
+</beans>
